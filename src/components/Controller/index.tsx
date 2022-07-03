@@ -1,12 +1,12 @@
 export default function Controller() {
   // calling IPC exposed from preload script
-  window.electron.icpExample.on('ipc-example', (arg) => {
+  window.electron.ipcRenderer.on('ipc-example', (arg) => {
     // eslint-disable-next-line no-console
     console.log(arg);
   });
 
   const startTest = () => {
-    window.electron.icpExample.sendMessage(
+    window.electron.ipcRenderer.sendMessage(
       'ipc-example',
       'https://www.github.com/'
     );
